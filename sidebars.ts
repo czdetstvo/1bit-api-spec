@@ -21,7 +21,7 @@ const sidebars: SidebarsConfig = {
         "api-docs/intro",
         {
           type: 'category',
-          label: 'HTTP Services',
+          label: 'HTTP Сервисы',
           link: {type: 'doc', id: 'api-docs/http-services/index'},
           items: [
             "api-docs/http-services/schedule",
@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Web Services',
+          label: 'Веб-сервисы',
           link: {type: 'generated-index'},
           items: [
             {
