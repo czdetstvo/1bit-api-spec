@@ -4,9 +4,12 @@ sidebar_position: 1
 
 # GetEnlargementSchedule (укрупненное расписание)
 
-**GetEnlargementSchedule** (StartDate[dateTime], FinishDate[dateTime]).
+## Описание
 
-Описание: Возвращает укрупненное расписание сотрудников, т.е. расписание без учета перерывов и занятого клиентами времени. Образуется посредством объединения самого раннего времени работы и самого позднего в один период (в разрезе дня).
+`GetEnlargementSchedule(StartDate[dateTime], FinishDate[dateTime])`
+
+> Возвращает укрупненное расписание сотрудников, т.е. расписание без учета перерывов и занятого клиентами времени.
+> Образуется посредством объединения самого раннего времени работы и самого позднего в один период (в разрезе дня).
 
 ## Возможные ошибки
 
@@ -15,21 +18,20 @@ sidebar_position: 1
 
 ## Пример запроса
 
-```xml
+```xml title="Тело запроса"
+
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ru="ru.umc">
-  <soap:Header/>
-  <soap:Body>
-    <ru:GetEnlargementSchedule>
-      <ru:StartDate>2017-03-01T00:00:00</ru:StartDate>
-      <ru:FinishDate>2017-03-01T00:00:00</ru:FinishDate>
-    </ru:GetEnlargementSchedule>
-  </soap:Body>
+    <soap:Header/>
+    <soap:Body>
+        <ru:GetEnlargementSchedule>
+            <ru:StartDate>2017-03-01T00:00:00</ru:StartDate>
+            <ru:FinishDate>2017-03-01T00:00:00</ru:FinishDate>
+        </ru:GetEnlargementSchedule>
+    </soap:Body>
 </soap:Envelope>
 ```
 
-## Пример ответа
-
-```xml
+```xml title="Тело ответа"
 
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
     <soap:Body>

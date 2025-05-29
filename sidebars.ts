@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Веб-сервисы',
+          label: 'Веб-сервисы 1С',
           link: {type: 'generated-index'},
           items: [
             {
