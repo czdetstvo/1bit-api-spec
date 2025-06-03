@@ -121,7 +121,3 @@ npm run start
 ```
 
 This will start a local development server where you can preview your changes.
-
-## Need Help?
-
-If you have any questions or need assistance, please reach out to the documentation team.

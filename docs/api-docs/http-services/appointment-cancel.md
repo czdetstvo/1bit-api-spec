@@ -4,11 +4,13 @@ sidebar_position: 4
 
 # AppointmentCancel (Отменить заявку)
 
-**Стандартный шаблон URL (PATTERN\_URL):** /AppointmentCancel
+**Стандартный шаблон URL (PATTERN\_URL):** `/AppointmentCancel`
 
 **HTTP-Метод POST.** Отмена переданной заявки. Возвращается результат попытки отменить заявку (true - успех, false - провал) и описание ошибки в случае провала.
 
-Является аналогом веб-сервиса CancelBookAnAppointment.
+:::info[Связанные сервисы]
+Является аналогом веб-сервиса [CancelBookAnAppointment](../web-services/cancel-book-an-appointment.md).
+:::
 
 ## Параметры в теле запроса
 
@@ -27,7 +29,7 @@ sidebar_position: 4
 
 Тело запроса JSON:
 
-```json
+```json title="Тело запроса"
 {
   "Key": "1111aaaa2222bbbb3333cccc4444dddd",
   "Reason": "Тест",
@@ -36,11 +38,7 @@ sidebar_position: 4
 }
 ```
 
-Возвращаемый результат:
-
-Тело ответа:
-
-```json
+```json title="Тело ответа"
 {
   "Ответ": {
     "Результат": "true",
