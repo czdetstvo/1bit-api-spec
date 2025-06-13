@@ -4,9 +4,20 @@ sidebar_position: 2
 
 # GetSchedule (детальное расписание)
 
-**GetSchedule** (StartDate[dateTime], FinishDate[dateTime]).
+## Описание
 
-Описание: Возвращает расписание сотрудников с учетом перерывов и временем занятым заявками клиентов.
+```text
+GetSchedule(StartDate[dateTime], FinishDate[dateTime])
+```
+
+### Параметры
+
+| **Параметр** | **Тип**  | **Описание**                                    |
+|--------------|----------|-------------------------------------------------|
+| StartDate    | dateTime | Дата начала периода для получения расписания    |
+| FinishDate   | dateTime | Дата окончания периода для получения расписания |
+
+> Возвращает расписание сотрудников с учетом перерывов и временем занятым заявками клиентов.
 
 ## Возможные ошибки
 
@@ -15,25 +26,28 @@ sidebar_position: 2
 
 ## Пример запроса
 
-```xml
+```xml title="Тело запроса"
+
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ru="ru.umc">
-  <soap:Header/>
-  <soap:Body>
-    <ru:GetSchedule>
-      <ru:StartDate>2017-03-01T00:00:00</ru:StartDate>
-      <ru:FinishDate>2017-03-01T00:00:00</ru:FinishDate>
-    </ru:GetSchedule>
-  </soap:Body>
+    <soap:Header/>
+    <soap:Body>
+        <ru:GetSchedule>
+            <ru:StartDate>2017-03-01T00:00:00</ru:StartDate>
+            <ru:FinishDate>2017-03-01T00:00:00</ru:FinishDate>
+        </ru:GetSchedule>
+    </soap:Body>
 </soap:Envelope>
 ```
 
 ## Пример ответа
 
-```xml
+```xml title="Тело ответа"
+
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-  <soap:Body>
-    <m:GetScheduleResponse xmlns:m="ru.umc">
-      <m:return xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><![CDATA[<?xml version="1.0"?>
+    <soap:Body>
+        <m:GetScheduleResponse xmlns:m="ru.umc">
+            <m:return xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <![CDATA[<?xml version="1.0"?>
 <ГрафикиДляСайта xmlns="S1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ГрафикДляСайта>
     <Клиника>f679444a-22b7-11df-8618-002618dcef2c</Клиника>
@@ -74,7 +88,7 @@ sidebar_position: 2
     <ДлительностьПриема>0001-01-01T00:15:00</ДлительностьПриема>
   </ГрафикДляСайта>
 </ГрафикиДляСайта>]]></m:return>
-    </m:GetScheduleResponse>
-  </soap:Body>
+        </m:GetScheduleResponse>
+    </soap:Body>
 </soap:Envelope>
 ```
