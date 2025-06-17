@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 7
 ---
 
 # BookAnAppointmentWithParams (запись с сайта)
@@ -10,16 +10,21 @@ sidebar_position: 4
 BookAnAppointmentWithParams(EmployeeID[string], PatientSurname[string], PatientName[string], PatientFatherName[string], Date[dateTime], TimeBegin[dateTime], Comment[string], Phone[string], Email[string], Address[string], Clinic[string], GUID[string], Params[Structure])
 ```
 
+`EmployeeID` – уникальный идентификатор сотрудника.
+`Clinic` – уникальный идентификатор клиники.
+
+> Производит запись клиента по уникальному идентификатору брони, который можно получить в следствие бронирования времени, с помощью «GetReserve».
+
+### Params
+
 `Params` – структура с необязательными параметрами:
 
 | **Параметр** | **Тип** | **Описание** |
 |--------------|---------|--------------|
-| **Birthday** | dateTime | Дата рождения клиента |
-| **Duration** | dateTime | Длительность записи |
-| **DurationType** | string | Метод расчета длительности заявки. Доступен один вариант значения: «ServiceDuration» – расчет длительности заявки из длительности услуг. Для расчета необходимо указать услуги в параметре Services |
-| **Services** | string | Уникальные идентификаторы услуг в 1С, разделенные символом «;» (точка с запятой) |
-
-> Производит запись клиента по уникальному идентификатору брони, который можно получить в следствие бронирования времени, с помощью «GetReserve».
+| Birthday | dateTime | Дата рождения клиента |
+| Duration | dateTime | Длительность записи |
+| DurationType | string | Метод расчета длительности заявки. Доступен один вариант значения: «ServiceDuration» – расчет длительности заявки из длительности услуг. Для расчета необходимо указать услуги в параметре Services |
+| Services | string | Уникальные идентификаторы услуг в 1С, разделенные символом «;» (точка с запятой) |
 
 ### Правила расчета длительности записи:
 

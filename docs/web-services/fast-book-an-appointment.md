@@ -1,24 +1,39 @@
+---
+sidebar_position: 8
+---
+
 # FastBookAnAppointment (создать лист ожидания)
 
-**FastBookAnAppointment** (Specialization[string], PatientSurname[string], PatientName[string],
-PatientFatherName[string], Date[dateTime], TimeBegin[dateTime], Comment[string], Phone[string], Email[string],
-Address[string], Clinic[string]).
+## Описание
 
-**Clinic** – уникальный идентификатор клиники.
+```text
+FastBookAnAppointment(Specialization[string], PatientSurname[string], PatientName[string], PatientFatherName[string], Date[dateTime], TimeBegin[dateTime], Comment[string], Phone[string], Email[string], Address[string], Clinic[string])
+```
 
-Описание: Создает лист ожидания записи в 1с.
+`Specialization` – специализация врача.
+`PatientSurname` – фамилия пациента.
+`PatientName` – имя пациента.
+`PatientFatherName` – отчество пациента.
+`Date` – дата записи.
+`TimeBegin` – время начала записи.
+`Comment` – комментарий к записи.
+`Phone` – телефон пациента.
+`Email` – электронная почта пациента.
+`Address` – адрес пациента.
+`Clinic` – уникальный идентификатор клиники.
 
-Возможные ошибки:
+> Создает лист ожидания записи в 1с.
+
+## Возможные ошибки
 
 1. Ошибка при преобразовании Date в дату;
 2. Ошибка при преобразовании TimeBegin в Дату;
 3. Ошибка при поиске клиники по переданному наименованию;
 4. Не удалось записать документ ЛистОжидания.
 
-## Пример запроса:
+## Пример запроса
 
 ```xml title="Тело запроса"
-
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ru="ru.umc">
     <soap:Header/>
     <soap:Body>
@@ -39,8 +54,7 @@ Address[string], Clinic[string]).
 </soap:Envelope>
 ```
 
-```xml title="Пример ответа"
-
+```xml title="Тело ответа"
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
     <soap:Body>
         <m:FastBookAnAppointmentResponse xmlns:m="ru.umc">
